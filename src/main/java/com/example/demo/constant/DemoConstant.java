@@ -1,0 +1,8 @@
+package com.example.demo.constant;
+
+public class DemoConstant {
+    public final static int MIN_AGE = 0;
+    public final static int MAX_AGE = 120;
+    public final static int MIN_NAME_LENGTH = 6;
+    public final static int MAX_NAME_LENGTH = 12;
+}

@@ -1,0 +1,19 @@
+package com.example.demo.service;
+
+import com.example.demo.entity.User;
+
+import java.util.List;
+
+public interface UserService {
+    void register(String name, String password, int age, String gender, String job);
+
+    void login(String name, String password);
+
+    void modifyPassword(String name, String password);
+
+    void deleteUser(int id);
+
+    List<User> findAllUser();
+
+    User findUserByName(String name);
+}

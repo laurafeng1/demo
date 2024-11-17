@@ -13,6 +13,7 @@ import com.example.demo.mapper.StudentMapper;
 import com.example.demo.service.CourseSelectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,14 +103,14 @@ public class CourseSelectionServiceImpl implements CourseSelectionService {
     }
 
     @Override
-    public void cancelCourse(CancelCourseCmd cmd) {
+    public void cancelCourse(@RequestBody CancelCourseCmd cmd) {
         // 1. 校验学生是否存在
         validStudent(cmd.getStuId());
 
         // 2. 校验课程是否存在
         validCourse(cmd.getCourId());
 
-        CourseSelection courseSelection = courseSelectionMapper.queryByStuIdAndCourId(cmd.getStuId(), cmd.getCourId());
+        CourseSelection courseSelection = courseSelectionMapper.queryByStuIdAndCourIdForCheck(cmd.getStuId(), cmd.getCourId());
 
         courseSelection.setStatus("INVALID");
 

@@ -5,7 +5,6 @@ import com.example.demo.controller.vo.BaseVO;
 import com.example.demo.controller.vo.CourseSelectionVO;
 import com.example.demo.controller.vo.StudentSelectionVO;
 import com.example.demo.entity.Course;
-import com.example.demo.entity.CourseSelection;
 import com.example.demo.entity.Student;
 import com.example.demo.entity.to.CourseSelectionDetail;
 import com.example.demo.entity.to.StudentSelectionDetail;
@@ -13,8 +12,9 @@ import com.example.demo.exception.*;
 import com.example.demo.mapper.CourseMapper;
 import com.example.demo.mapper.StudentMapper;
 import com.example.demo.service.CourseSelectionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -28,6 +28,8 @@ public class CourseSelectionController {
 
     @Autowired
     private StudentMapper studentMapper;
+
+    Logger logger = LoggerFactory.getLogger(CourseSelectionController.class);
 
     @PostMapping("/add")
     public BaseVO selectCourse(int stuId, int courId) {
@@ -131,13 +133,12 @@ public class CourseSelectionController {
 
     @PutMapping("/cancel")
     public BaseVO cancelSelection (@RequestBody CancelCourseCmd cmd){
+        logger.info("student ID = {}, course ID = {}",cmd.getStuId(), cmd.getCourId());
         courseSelectionService.cancelCourse(cmd);
+        logger.info("{} has deselected the {}",cmd.getStuId(), cmd.getCourId());
         return buildBaseVO(200, 1000, true, "");
     }
 
-    //注释222
-    //冲突111
-    //更新111
     private BaseVO buildBaseVO(int code, long time,boolean success, String errorMsg) {
         BaseVO vo = new BaseVO();
         vo.setCode(code);

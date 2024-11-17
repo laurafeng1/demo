@@ -17,6 +17,8 @@ public interface CourseSelectionMapper {
 
     CourseSelection queryByStuIdAndCourId(int stuId, int courId);
 
+    CourseSelection queryByStuIdAndCourIdForCheck(int stuId, int courId);
+
     void updateStatus(CourseSelection courseSelection);
 
 }

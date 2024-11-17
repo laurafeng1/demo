@@ -31,3 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/log/demo01_2024-11-17.log

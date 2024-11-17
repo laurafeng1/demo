@@ -37,6 +37,10 @@
         SELECT * FROM course_selection WHERE stu_id = #{stuId} and cour_id = #{courId} and status = "VALID"
     </select>
 
+    <select id="queryByStuIdAndCourIdForCheck" resultMap="CourseSelectionResultMap">
+        SELECT * FROM course_selection WHERE stu_id = #{stuId} and cour_id = #{courId}
+    </select>
+
     <select id="updateStatus">
         update course_selection
         set

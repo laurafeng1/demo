@@ -12,10 +12,13 @@ import com.example.demo.exception.*;
 import com.example.demo.mapper.CourseMapper;
 import com.example.demo.mapper.StudentMapper;
 import com.example.demo.service.CourseSelectionService;
+import com.example.demo.util.TimeConvertUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("/course/selection")
@@ -135,7 +138,7 @@ public class CourseSelectionController {
     public BaseVO cancelSelection (@RequestBody CancelCourseCmd cmd){
         logger.info("student ID = {}, course ID = {}",cmd.getStuId(), cmd.getCourId());
         courseSelectionService.cancelCourse(cmd);
-        logger.info("{} has deselected the {}",cmd.getStuId(), cmd.getCourId());
+        logger.info("{} has deselected the course {} at {}",cmd.getStuId(), cmd.getCourId(), TimeConvertUtil.format(new Date()));
         return buildBaseVO(200, 1000, true, "");
     }
 

@@ -1,0 +1,4 @@
+id,name,password,age,gender,job
+1,aaa,123aaa,20,1,java
+2,bbb,123bbb,22,0,english
+3,ccc,123ccc,25,1,math

@@ -1,0 +1,191 @@
+2024-12-07 07:19:42.507 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:19:42.575 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:19:42.851 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81060 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:19:42.851 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:19:43.195 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:19:43.197 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:19:43.211 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:19:44.216 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.562 seconds (process running for 2.058)
+2024-12-07 07:19:44.713 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:19:44.957 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d8d671b
+2024-12-07 07:19:44.958 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:19:45.112 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:19:45.119 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:20:27.763 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:20:27.855 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:20:28.125 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81067 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:20:28.126 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:20:28.512 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:20:28.513 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:20:28.534 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:20:29.704 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.756 seconds (process running for 2.461)
+2024-12-07 07:21:22.769 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:21:31.794 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:21:31.876 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:21:32.146 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81077 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:21:32.147 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:21:32.511 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:21:32.512 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:21:32.526 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:21:33.425 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.46 seconds (process running for 2.096)
+2024-12-07 07:21:49.637 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:21:51.724 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2259d54f
+2024-12-07 07:21:51.730 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:22:02.532 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:22:02.557 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:22:20.603 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:22:20.689 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:22:20.964 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81086 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:22:20.964 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:22:21.346 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:22:21.347 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:22:21.369 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:22:22.432 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.644 seconds (process running for 2.309)
+2024-12-07 07:23:33.169 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:23:40.674 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:23:40.754 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:23:41.045 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81099 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:23:41.046 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:23:41.503 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:23:41.505 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:23:41.518 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:23:42.458 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.607 seconds (process running for 2.288)
+2024-12-07 07:23:49.472 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:23:51.576 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@af007d6
+2024-12-07 07:23:51.582 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:33:02.437 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m10s749ms).
+2024-12-07 07:33:02.620 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:33:02.650 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:33:41.960 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:33:42.044 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:33:42.341 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81129 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:33:42.342 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:33:42.726 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:33:42.727 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:33:42.747 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:33:43.692 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.542 seconds (process running for 2.371)
+2024-12-07 07:33:47.353 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:33:49.474 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3741071d
+2024-12-07 07:33:49.481 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:35:14.232 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s184ms).
+2024-12-07 07:36:00.082 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:36:00.087 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:36:13.381 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:36:13.482 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:36:13.774 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81169 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:36:13.774 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:36:14.151 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:36:14.153 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:36:14.169 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:36:14.963 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.372 seconds (process running for 2.079)
+2024-12-07 07:36:15.413 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:36:15.617 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f0381f0
+2024-12-07 07:36:15.618 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:36:15.962 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:36:15.977 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:42:32.696 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:42:32.794 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:42:33.166 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81225 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:42:33.167 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:42:33.556 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:42:33.557 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:42:33.572 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:42:34.386 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.472 seconds (process running for 2.111)
+2024-12-07 07:42:34.844 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:42:35.041 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6bfdaed7
+2024-12-07 07:42:35.042 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:42:35.409 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:42:35.430 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:44:41.922 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:44:42.017 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:44:42.299 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81246 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:44:42.300 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:44:42.783 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:44:42.785 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:44:42.815 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:44:43.822 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.696 seconds (process running for 2.645)
+2024-12-07 07:44:47.851 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:44:50.144 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40416321
+2024-12-07 07:44:50.150 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:45:25.766 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:45:25.771 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:45:32.494 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:45:32.584 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:45:32.867 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81258 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:45:32.868 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:45:33.261 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:45:33.264 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:45:33.281 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:45:34.189 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.498 seconds (process running for 2.197)
+2024-12-07 07:45:40.981 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:45:43.262 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@435a2c7d
+2024-12-07 07:45:43.268 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:46:17.464 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:46:17.468 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:46:23.190 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:46:23.271 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:46:23.577 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81265 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:46:23.577 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:46:23.941 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:46:23.943 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:46:23.958 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:46:24.809 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.428 seconds (process running for 2.072)
+2024-12-07 07:46:27.719 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:46:29.838 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@af007d6
+2024-12-07 07:46:29.843 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:48:09.743 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m39s798ms).
+2024-12-07 07:48:09.889 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:48:09.893 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:49:45.158 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:49:45.227 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:49:45.477 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81288 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:49:45.478 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:49:45.891 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:49:45.892 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:49:45.905 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:49:46.707 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.409 seconds (process running for 1.954)
+2024-12-07 07:49:47.162 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:49:47.374 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d8d671b
+2024-12-07 07:49:47.375 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:49:47.721 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:49:47.740 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:50:51.170 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:50:51.243 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:50:51.507 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81297 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:50:51.507 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:50:51.839 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:50:51.840 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:50:51.854 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:50:52.669 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.332 seconds (process running for 1.902)
+2024-12-07 07:50:53.137 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:50:53.391 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f0381f0
+2024-12-07 07:50:53.398 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:50:53.782 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:50:53.822 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:53:24.239 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:53:24.317 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:53:24.602 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81308 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:53:24.603 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:53:25.083 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:53:25.084 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:53:25.097 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:53:26.019 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.619 seconds (process running for 2.231)
+2024-12-07 07:53:26.461 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:53:26.662 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37cc6017
+2024-12-07 07:53:26.663 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:53:27.004 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:53:27.030 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-12-07 07:53:41.202 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-07 07:53:41.285 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.controller.UserControllerTest
+2024-12-07 07:53:41.617 [main] INFO  com.example.demo.controller.UserControllerTest - Starting UserControllerTest using Java 22.0.2 with PID 81314 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-07 07:53:41.629 [main] INFO  com.example.demo.controller.UserControllerTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-07 07:53:42.116 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-07 07:53:42.118 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-07 07:53:42.133 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-12-07 07:53:42.995 [main] INFO  com.example.demo.controller.UserControllerTest - Started UserControllerTest in 1.63 seconds (process running for 2.232)
+2024-12-07 07:53:52.681 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-12-07 07:53:54.926 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28d7bd6b
+2024-12-07 07:53:54.932 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-12-07 07:55:10.996 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m15s958ms).
+2024-12-07 07:55:36.481 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-12-07 07:55:36.486 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

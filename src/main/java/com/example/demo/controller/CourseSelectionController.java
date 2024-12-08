@@ -134,6 +134,7 @@ public class CourseSelectionController {
         return baseVo;
     }
 
+    // Requestbody: convert json string to objects
     @PutMapping("/cancel")
     public BaseVO cancelSelection (@RequestBody CancelCourseCmd cmd){
         logger.info("student ID = {}, course ID = {}",cmd.getStuId(), cmd.getCourId());

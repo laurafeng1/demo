@@ -2,13 +2,17 @@ package com.example.demo.service.impl;
 
 import com.example.demo.constant.DemoConstant;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserToken;
 import com.example.demo.enums.GenderEnum;
 import com.example.demo.exception.*;
 import com.example.demo.mapper.UserMapper;
+import com.example.demo.repository.UserTokenRepository;
 import com.example.demo.service.UserService;
+import com.example.demo.util.TimeCalculateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,6 +25,9 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private UserTokenRepository userTokenRepository;
 
     /**
      * 用户注册功能
@@ -45,7 +52,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void login(String name, String password) {
+    public void login( String name, String password) {
         User user = userMapper.findByName(name);
 
         if (user == null) {
@@ -54,6 +61,16 @@ public class UserServiceImpl implements UserService {
 
         if (!user.getPassword().equals(password)) {
             throw new UserPasswordInvalidException("密码输入错误");
+        }
+
+        UserToken userToken = userTokenRepository.loadToken("userTokenHash2", user.getId());
+        UserToken userToken1 = new UserToken();
+        if (userToken == null) {
+            userToken1.setUserId(user.getId());
+            userToken1.setExpireTime(TimeCalculateUtil.calculateExpireTime());
+            userTokenRepository.saveToken("userTokenHash2", user.getId(), userToken1);
+        } else {
+            userTokenRepository.updateToken("userTokenHash2", user.getId(), userToken1);
         }
 
         System.out.println(String.format("%s登陆成功", user.getName()));

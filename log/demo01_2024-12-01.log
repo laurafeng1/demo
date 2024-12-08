@@ -1,0 +1,32 @@
+2024-12-01 06:54:05.336 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-01 06:54:05.390 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.repository.UserRepositoryTest
+2024-12-01 06:54:05.626 [main] INFO  com.example.demo.repository.UserRepositoryTest - Starting UserRepositoryTest using Java 22.0.2 with PID 60078 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-01 06:54:05.627 [main] INFO  com.example.demo.repository.UserRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-01 06:54:06.010 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 06:54:06.012 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 06:54:06.028 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-12-01 06:54:06.957 [main] INFO  com.example.demo.repository.UserRepositoryTest - Started UserRepositoryTest in 1.493 seconds (process running for 2.042)
+2024-12-01 06:55:55.085 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-01 06:55:55.160 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.repository.UserRepositoryTest
+2024-12-01 06:55:55.500 [main] INFO  com.example.demo.repository.UserRepositoryTest - Starting UserRepositoryTest using Java 22.0.2 with PID 60102 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-01 06:55:55.501 [main] INFO  com.example.demo.repository.UserRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-01 06:55:56.033 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 06:55:56.035 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 06:55:56.049 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2024-12-01 06:55:56.845 [main] INFO  com.example.demo.repository.UserRepositoryTest - Started UserRepositoryTest in 1.591 seconds (process running for 2.17)
+2024-12-01 06:58:09.819 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-01 06:58:09.926 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.repository.UserRepositoryTest
+2024-12-01 06:58:10.323 [main] INFO  com.example.demo.repository.UserRepositoryTest - Starting UserRepositoryTest using Java 22.0.2 with PID 60168 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-01 06:58:10.324 [main] INFO  com.example.demo.repository.UserRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-01 06:58:10.790 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 06:58:10.792 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 06:58:10.806 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5 ms. Found 0 Redis repository interfaces.
+2024-12-01 06:58:11.612 [main] INFO  com.example.demo.repository.UserRepositoryTest - Started UserRepositoryTest in 1.54 seconds (process running for 2.275)
+2024-12-01 06:58:39.268 [main] INFO  o.s.t.c.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.demo.repository.UserRepositoryTest]: UserRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-12-01 06:58:39.339 [main] INFO  o.s.b.t.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.repository.UserRepositoryTest
+2024-12-01 06:58:39.615 [main] INFO  com.example.demo.repository.UserRepositoryTest - Starting UserRepositoryTest using Java 22.0.2 with PID 60206 (started by flwj in /Users/flwj/Downloads/demo01)
+2024-12-01 06:58:39.616 [main] INFO  com.example.demo.repository.UserRepositoryTest - No active profile set, falling back to 1 default profile: "default"
+2024-12-01 06:58:39.981 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-12-01 06:58:39.984 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-12-01 06:58:40.004 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-12-01 06:58:40.912 [main] INFO  com.example.demo.repository.UserRepositoryTest - Started UserRepositoryTest in 1.48 seconds (process running for 2.06)

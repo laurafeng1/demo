@@ -2,10 +2,12 @@ package com.example.demo.service.impl;
 
 import com.example.demo.constant.DemoConstant;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserSubscribe;
 import com.example.demo.entity.UserToken;
 import com.example.demo.enums.GenderEnum;
 import com.example.demo.exception.*;
 import com.example.demo.mapper.UserMapper;
+import com.example.demo.repository.UserSubscribeRepository;
 import com.example.demo.repository.UserTokenRepository;
 import com.example.demo.service.UserService;
 import com.example.demo.util.TimeCalculateUtil;
@@ -28,6 +30,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserTokenRepository userTokenRepository;
+
+    @Autowired
+    private UserSubscribeRepository userSubscribeRepository;
 
     /**
      * 用户注册功能
@@ -183,5 +188,26 @@ public class UserServiceImpl implements UserService {
         } catch (Exception e) {
             throw new UserRegisterFailedException("插入数据库失败！");
         }
+    }
+
+    public void addUserSubscribe(User user) {
+        try{
+            userSubscribeRepository.addSubscribe(buildUserSubscribe(user).getUserId(), buildUserSubscribe(user));
+        } catch (Exception e) {
+            throw new UserSubscribeFailException(String.format("关注%d用户失败!", user.getId()));
+        }
+
+    }
+
+    public List<UserSubscribe> showUserSubscribe(User user) {
+        return userSubscribeRepository.showSubscribe(buildUserSubscribe(user).getUserId(), buildUserSubscribe(user));
+    }
+
+    private UserSubscribe buildUserSubscribe(User user) {
+        UserSubscribe us1 = new UserSubscribe();
+        us1.setUserId(user.getId());
+        us1.setUserName(user.getName());
+        us1.setSubscribeTime(new Date());
+        return us1;
     }
 }

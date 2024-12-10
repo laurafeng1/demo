@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserSubscribe;
 
 import java.util.List;
 
@@ -16,4 +17,8 @@ public interface UserService {
     List<User> findAllUser();
 
     User findUserByName(String name);
+
+    void addUserSubscribe(User user);
+
+    List<UserSubscribe> showUserSubscribe(User user);
 }

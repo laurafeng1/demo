@@ -200,7 +200,22 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<UserSubscribe> showUserSubscribe(User user) {
-        return userSubscribeRepository.showSubscribe(buildUserSubscribe(user).getUserId(), buildUserSubscribe(user));
+        return userSubscribeRepository.showSubscribe(buildUserSubscribe(user).getUserId());
+    }
+
+//    public void removeUserSubscribe(User userSubscribed, User userSubscriber) {
+//        List<UserSubscribe> userSubscribeList = showUserSubscribe(userSubscribed);
+//        UserSubscribe removedSubscriber = buildUserSubscribe(userSubscriber);
+//        try {
+//            userSubscribeList.remove(removedSubscriber);
+//            userSubscribeRepository.updateAllSubscribe(buildUserSubscribe(userSubscribed).getUserId(), userSubscribeList);
+//        } catch (Exception e) {
+//            throw new UserSubscribeRemoveFailException(String.format("取消关注%d失败!", userSubscribed.getId()));
+//        }
+//    }
+
+    public void cancelUserSubscribe(int userId, User user) {
+        userSubscribeRepository.removeSubscribe(userId, 1L, buildUserSubscribe(user));
     }
 
     private UserSubscribe buildUserSubscribe(User user) {

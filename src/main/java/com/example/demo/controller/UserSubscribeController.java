@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.controller.cmd.CancelSubscribeCmd;
 import com.example.demo.controller.converter.UserSubscribeVOConverter;
 import com.example.demo.controller.vo.BaseVO;
 import com.example.demo.controller.vo.UserAllSubscribeVO;
@@ -49,6 +50,21 @@ public class UserSubscribeController {
         } catch (Exception e) {
             end = System.currentTimeMillis();
             return UserAllSubscribeVO.buildUserAllSubscribeVO(0, new ArrayList<>(), BaseVO.buildBaseVo(500, end - start, false, "查询关注列表失败"));
+        }
+
+    }
+
+    @DeleteMapping("/delete")
+    public BaseVO removeSubscribe (@RequestBody CancelSubscribeCmd cancelSubscribeCmd) {
+        long start = System.currentTimeMillis();
+        long end = 0;
+        try {
+            userService.cancelUserSubscribe(cancelSubscribeCmd.getUseId(), cancelSubscribeCmd.getUser());
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(200, end - start, true, null);
+        } catch (Exception e) {
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(500, end - start, false, "取消关注失败");
         }
 
     }

@@ -21,4 +21,8 @@ public interface UserService {
     void addUserSubscribe(User user);
 
     List<UserSubscribe> showUserSubscribe(User user);
+
+//    void removeUserSubscribe(User userSubscribed, User userSubscriber);
+
+    void cancelUserSubscribe(int userId, User user);
 }

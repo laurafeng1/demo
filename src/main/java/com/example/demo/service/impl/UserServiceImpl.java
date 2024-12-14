@@ -11,6 +11,8 @@ import com.example.demo.repository.UserSubscribeRepository;
 import com.example.demo.repository.UserTokenRepository;
 import com.example.demo.service.UserService;
 import com.example.demo.util.TimeCalculateUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserSubscribeRepository userSubscribeRepository;
+
+    private final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     /**
      * 用户注册功能
@@ -190,17 +194,36 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public void addUserSubscribe(User user) {
+    @Override
+    public void addUserSubscribe(User subed, User sub) {
+        if(subed.getId() == sub.getId()) {
+            logger.warn("自己不可以关注自己");
+            return;
+        }
+        List<UserSubscribe> showUserSubscribes = showUserSubscribe(subed.getId());
+        UserSubscribe userSubscribe = buildUserSubscribe(sub);
         try{
-            userSubscribeRepository.addSubscribe(buildUserSubscribe(user).getUserId(), buildUserSubscribe(user));
+            for(UserSubscribe showUserSubscribe: showUserSubscribes){
+                if (showUserSubscribe.getUserId() == userSubscribe.getUserId() && showUserSubscribe.getUserName().equals(userSubscribe.getUserName())) {
+                    logger.warn(String.format("您已关注%d，不可重复关注", subed.getId()));
+                    return;
+                }
+            }
+            userSubscribeRepository.addSubscribe(subed.getId(), userSubscribe);
+            userSubscribeRepository.addSubscribed(sub.getId(), buildUserSubscribe(subed));
         } catch (Exception e) {
-            throw new UserSubscribeFailException(String.format("关注%d用户失败!", user.getId()));
+            logger.error(String.format("关注%d用户失败!", subed.getId()));
+            throw new UserSubscribeFailException(String.format("关注%d用户失败!", subed.getId()));
         }
 
     }
 
-    public List<UserSubscribe> showUserSubscribe(User user) {
-        return userSubscribeRepository.showSubscribe(buildUserSubscribe(user).getUserId());
+    public List<UserSubscribe> showUserSubscribe(int userId) {
+        return userSubscribeRepository.showSubscribe(userId);
+    }
+
+    public List<UserSubscribe> showUserSubscribed(int userId) {
+        return userSubscribeRepository.showSubscribed(userId);
     }
 
 //    public void removeUserSubscribe(User userSubscribed, User userSubscriber) {
@@ -214,8 +237,19 @@ public class UserServiceImpl implements UserService {
 //        }
 //    }
 
-    public void cancelUserSubscribe(int userId, User user) {
-        userSubscribeRepository.removeSubscribe(userId, 1L, buildUserSubscribe(user));
+    public void cancelUserSubscribe(User subed, User sub) {
+        List<UserSubscribe> allSubscribes = showUserSubscribe(subed.getId());
+        for(UserSubscribe allSubscribe: allSubscribes) {
+            if (allSubscribe.getUserId() == sub.getId() && allSubscribe.getUserName().equals(sub.getName())) {
+                userSubscribeRepository.removeSubscribe(subed.getId(), 1L, allSubscribe);
+            }
+        }
+        List<UserSubscribe> allSubscribeds = showUserSubscribed(sub.getId());
+        for(UserSubscribe allSubscribed: allSubscribeds) {
+            if (allSubscribed.getUserId() == subed.getId() && allSubscribed.getUserName().equals(subed.getName())) {
+                userSubscribeRepository.removeSubscribed(sub.getId(), 1L, allSubscribed);
+            }
+        }
     }
 
     private UserSubscribe buildUserSubscribe(User user) {

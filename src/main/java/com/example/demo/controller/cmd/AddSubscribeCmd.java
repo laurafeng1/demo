@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CancelSubscribeCmd {
+public class AddSubscribeCmd {
     private User subed;
 
     private User sub;

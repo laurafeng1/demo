@@ -18,11 +18,13 @@ public interface UserService {
 
     User findUserByName(String name);
 
-    void addUserSubscribe(User user);
+    void addUserSubscribe(User subed, User sub);
 
-    List<UserSubscribe> showUserSubscribe(User user);
+    List<UserSubscribe> showUserSubscribe(int userId);
+
+    List<UserSubscribe> showUserSubscribed(int userId);
 
 //    void removeUserSubscribe(User userSubscribed, User userSubscriber);
 
-    void cancelUserSubscribe(int userId, User user);
+    void cancelUserSubscribe(User subed, User sub);
 }

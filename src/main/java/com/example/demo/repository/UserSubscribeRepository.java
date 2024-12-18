@@ -19,30 +19,30 @@ public class UserSubscribeRepository {
         buildListOperation().leftPush(buildKey(userId, SubscribeEum.SUBSCRIBE), value);
     }
 
-    public List<UserSubscribe> showSubscribe(int userId) {
-        return buildListOperation().range(buildKey(userId, SubscribeEum.SUBSCRIBE), 0, -1);
-    }
-
-    public void removeSubscribe(int userId, long count, UserSubscribe value) {
-        buildListOperation().remove(buildKey(userId, SubscribeEum.SUBSCRIBE), count, value);
-    }
-
-//    public void updateAllSubscribe(int userId, List<UserSubscribe> values) {
-//        redisTemplate.delete(buildKey(userId));
-//        redisTemplate.opsForList().leftPushAll(buildKey(userId), values);
-//    }
-
     public void addSubscribed(int userId, UserSubscribe value) {
         buildListOperation().leftPush(buildKey(userId, SubscribeEum.SUBSCRIBED), value);
+    }
+
+    public List<UserSubscribe> showSubscribe(int userId) {
+        return buildListOperation().range(buildKey(userId, SubscribeEum.SUBSCRIBE), 0, -1);
     }
 
     public List<UserSubscribe> showSubscribed(int userId) {
         return buildListOperation().range(buildKey(userId, SubscribeEum.SUBSCRIBED), 0, -1);
     }
 
+    public void removeSubscribe(int userId, long count, UserSubscribe value) {
+        buildListOperation().remove(buildKey(userId, SubscribeEum.SUBSCRIBE), count, value);
+    }
+
     public void removeSubscribed(int userId, long count, UserSubscribe value) {
         buildListOperation().remove(buildKey(userId, SubscribeEum.SUBSCRIBED), count, value);
     }
+
+//    public void updateAllSubscribe(int userId, List<UserSubscribe> values) {
+//        redisTemplate.delete(buildKey(userId));
+//        redisTemplate.opsForList().leftPushAll(buildKey(userId), values);
+//    }
 
     // keep consistency of keys
     private String buildKey(int userId, SubscribeEum status) {

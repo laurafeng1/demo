@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -196,6 +197,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void addUserSubscribe(User subed, User sub) {
+        if (checkUserExistency(subed.getId())) {
+            logger.warn(String.format("被关注用户%d不存在", subed.getId()));
+            return;
+        }
+        if (checkUserExistency(sub.getId())) {
+            logger.warn(String.format("关注用户%d不存在", sub.getId()));
+            return;
+        }
         if(subed.getId() == sub.getId()) {
             logger.warn("自己不可以关注自己");
             return;
@@ -219,11 +228,23 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<UserSubscribe> showUserSubscribe(int userId) {
-        return userSubscribeRepository.showSubscribe(userId);
+        List<UserSubscribe> userSubscribes = new ArrayList<>();
+        if (checkUserExistency(userId)) {
+            logger.warn(String.format("该用户%d不存在", userId));
+        } else {
+            userSubscribes = userSubscribeRepository.showSubscribe(userId);
+        }
+        return userSubscribes;
     }
 
     public List<UserSubscribe> showUserSubscribed(int userId) {
-        return userSubscribeRepository.showSubscribed(userId);
+        List<UserSubscribe> userSubscribes = new ArrayList<>();
+        if (checkUserExistency(userId)) {
+            logger.warn(String.format("该用户%d不存在", userId));
+        } else {
+            userSubscribes =  userSubscribeRepository.showSubscribed(userId);
+        }
+        return userSubscribes;
     }
 
 //    public void removeUserSubscribe(User userSubscribed, User userSubscriber) {
@@ -238,6 +259,14 @@ public class UserServiceImpl implements UserService {
 //    }
 
     public void cancelUserSubscribe(User subed, User sub) {
+        if (checkUserExistency(subed.getId())) {
+            logger.warn(String.format("被关注用户%d不存在", subed.getId()));
+            return;
+        }
+        if (checkUserExistency(sub.getId())) {
+            logger.warn(String.format("关注用户%d不存在", sub.getId()));
+            return;
+        }
         List<UserSubscribe> allSubscribes = showUserSubscribe(subed.getId());
         for(UserSubscribe allSubscribe: allSubscribes) {
             if (allSubscribe.getUserId() == sub.getId() && allSubscribe.getUserName().equals(sub.getName())) {
@@ -250,6 +279,10 @@ public class UserServiceImpl implements UserService {
                 userSubscribeRepository.removeSubscribed(sub.getId(), 1L, allSubscribed);
             }
         }
+    }
+
+    private boolean checkUserExistency(int userId) {
+        return userMapper.findById(userId) == null;
     }
 
     private UserSubscribe buildUserSubscribe(User user) {

@@ -13,9 +13,9 @@
     </select>
 
     <select id="add">
-        insert into user(name, password, age, gender, job)
+        insert into user(name, password, age, gender, job, score)
         values
-        (#{name}, #{password}, #{age}, #{gender}, #{job})
+        (#{name}, #{password}, #{age}, #{gender}, #{job}, #{score})
     </select>
 
     <select id="findAll">

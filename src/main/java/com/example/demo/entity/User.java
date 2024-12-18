@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Getter
@@ -22,6 +23,8 @@ public class User {
 
     private String job;
 
+    private double score;
+
     public static User createByString (List<String> strs){
         User user = new User();
         user.setId(Integer.parseInt(strs.get(0)));
@@ -30,6 +33,7 @@ public class User {
         user.setAge(Integer.parseInt(strs.get(3)));
         user.setGender(strs.get(4));
         user.setJob(strs.get(5));
+        user.setScore(Double.parseDouble(strs.get(6)));
         return user;
     }
 }

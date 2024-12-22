@@ -15,10 +15,15 @@ public interface CourseSelectionMapper {
 
     void delete(int stuId, int courId);
 
+    void deleteById(int id);
+
     CourseSelection queryByStuIdAndCourId(int stuId, int courId);
 
     CourseSelection queryByStuIdAndCourIdForCheck(int stuId, int courId);
 
     void updateStatus(CourseSelection courseSelection);
 
+    void updateStatusById(CourseSelection courseSelection);
+
+    CourseSelection queryById(int id);
 }

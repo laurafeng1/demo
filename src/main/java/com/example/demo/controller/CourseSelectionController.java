@@ -1,10 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.controller.cmd.CancelCourseCmd;
+import com.example.demo.controller.converter.CourseSelectVOConverter;
 import com.example.demo.controller.vo.BaseVO;
+import com.example.demo.controller.vo.CourseSelectVO;
 import com.example.demo.controller.vo.CourseSelectionVO;
 import com.example.demo.controller.vo.StudentSelectionVO;
 import com.example.demo.entity.Course;
+import com.example.demo.entity.CourseSelection;
 import com.example.demo.entity.Student;
 import com.example.demo.entity.to.CourseSelectionDetail;
 import com.example.demo.entity.to.StudentSelectionDetail;
@@ -134,7 +137,7 @@ public class CourseSelectionController {
         return baseVo;
     }
 
-    // Requestbody: convert json string to objects
+    // @RequestBody: convert json string to objects
     @PutMapping("/cancel")
     public BaseVO cancelSelection (@RequestBody CancelCourseCmd cmd){
         logger.info("student ID = {}, course ID = {}",cmd.getStuId(), cmd.getCourId());
@@ -152,5 +155,79 @@ public class CourseSelectionController {
         return vo;
     }
 
+    @GetMapping("/getCourseSelection")
+    public CourseSelectVO searchCourseSelection(int id) {
+        long start = System.currentTimeMillis();
+        long end;
+        CourseSelection courseSelection = courseSelectionService.searchCourseSelection(id);
+        CourseSelectVO courseSelectVO = CourseSelectVOConverter.convertToVO(courseSelection);
+        try {
+            end = System.currentTimeMillis();
+            courseSelectVO.setBaseVO(BaseVO.buildBaseVo(200, end - start, true, null));
+        } catch(Exception e) {
+            end = System.currentTimeMillis();
+            courseSelectVO.setBaseVO(BaseVO.buildBaseVo(500, end - start, false, "获取选课信息失败"));
+        }
+        return courseSelectVO;
+    }
 
+    @PostMapping("/addCourseSelection")
+    public BaseVO addCourseSelection(int stuId, int courId) {
+        long start = System.currentTimeMillis();
+        long end;
+        try {
+            courseSelectionService.insertCourseSelection(stuId, courId);
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(200, end - start, true, null);
+        } catch(Exception e) {
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(500, end - start, false, "添加选课信息失败");
+        }
+    }
+
+    @DeleteMapping("/deleteCourseSelection")
+    public BaseVO deleteCourseSelection(int id) {
+        long start = System.currentTimeMillis();
+        long end;
+        try {
+            courseSelectionService.deleteCourseSelection(id);
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(200, end - start, true, null);
+        } catch(Exception e) {
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(500, end - start, false, "删除选课信息失败");
+        }
+    }
+
+    @PutMapping("/updateCourseSelection")
+    public BaseVO updateCourseSelection(int id) {
+        long start = System.currentTimeMillis();
+        long end;
+        try {
+            courseSelectionService.updateCourseSelection(id);
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(200, end - start, true, null);
+        } catch(Exception e) {
+            end = System.currentTimeMillis();
+            return BaseVO.buildBaseVo(500, end - start, false, "更新选课信息失败");
+        }
+    }
+
+    @GetMapping("/getCourseSelectionByIds")
+    public CourseSelectVO getCourseSelectionByIds(int stuId, int courId) {
+        long start = System.currentTimeMillis();
+        long end;
+        CourseSelectVO courseSelectVO = new CourseSelectVO();
+        try {
+            CourseSelection courseSelection = courseSelectionService.searchCourseSelectionByIds(stuId, courId);
+            courseSelectVO = CourseSelectVOConverter.convertToVO(courseSelection);
+            end = System.currentTimeMillis();
+            courseSelectVO.setBaseVO(BaseVO.buildBaseVo(200, end - start, true, null));
+            return courseSelectVO;
+        } catch(Exception e) {
+            end = System.currentTimeMillis();
+            courseSelectVO.setBaseVO(BaseVO.buildBaseVo(500, end - start, false, "根据id获取选课信息失败"));
+            return courseSelectVO;
+        }
+    }
 }

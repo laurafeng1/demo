@@ -10,9 +10,13 @@ import com.example.demo.exception.*;
 import com.example.demo.mapper.CourseMapper;
 import com.example.demo.mapper.CourseSelectionMapper;
 import com.example.demo.mapper.StudentMapper;
+import com.example.demo.repository.CourseSelectionRepository;
 import com.example.demo.service.CourseSelectionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
@@ -29,7 +33,13 @@ public class CourseSelectionServiceImpl implements CourseSelectionService {
     @Autowired
     private CourseSelectionMapper courseSelectionMapper;
 
+    @Autowired
+    private CourseSelectionRepository courseSelectionRepository;
+
+    private Logger logger = LoggerFactory.getLogger(CourseSelectionServiceImpl.class);
+
     @Override
+    @Transactional
     public void selectCourse(int stuId, int courId) {
         List<CourseSelection> list1 = courseSelectionMapper.queryByCourId(courId);
         int hasSelectedCount = list1.size();
@@ -56,6 +66,7 @@ public class CourseSelectionServiceImpl implements CourseSelectionService {
     }
 
     @Override
+    @Transactional
     public CourseSelectionDetail queryByStuId(int stuId) {
         List<CourseSelection> list = courseSelectionMapper.queryByStuId(stuId);
         Student student = studentMapper.findById(stuId);
@@ -75,6 +86,7 @@ public class CourseSelectionServiceImpl implements CourseSelectionService {
     }
 
     @Override
+    @Transactional
     public StudentSelectionDetail queryByCourId(int courId) {
         List<CourseSelection> list = courseSelectionMapper.queryByCourId(courId);
         Course course = courseMapper.findById(courId);
@@ -91,6 +103,7 @@ public class CourseSelectionServiceImpl implements CourseSelectionService {
     }
 
     @Override
+    @Transactional
     public void cancelSelection(int stuId, int courId) {
         validStudent(stuId);
         validCourse(courId);
@@ -103,6 +116,7 @@ public class CourseSelectionServiceImpl implements CourseSelectionService {
     }
 
     @Override
+    @Transactional
     public void cancelCourse(@RequestBody CancelCourseCmd cmd) {
         // 1. 校验学生是否存在
         validStudent(cmd.getStuId());
@@ -156,4 +170,64 @@ public class CourseSelectionServiceImpl implements CourseSelectionService {
             throw new CourseSelectionInsertException("学生选课记录插入失败");
         }
     }
+
+    // Redis(in-memory database) working with SQL database(persistent datastore)
+    // 1. search: look in the cache first: 1) cache hit-> return data 2) cache miss-> look in the sql database-> get data and prime cache with data
+    // @Transactional为事务
+    @Transactional
+    public CourseSelection searchCourseSelection(int id) {
+        CourseSelection courseSelection = courseSelectionRepository.searchCourseSelection(id);
+        if(courseSelection == null) {
+            courseSelection = courseSelectionMapper.queryById(id);
+            courseSelectionRepository.insertCourseSelection(id, courseSelection);
+            logger.info("从数据库中读取数据, 且数据插入缓存成功");
+            return courseSelection;
+        } else {
+            logger.info("从缓存中读取数据");
+            return courseSelection;
+        }
+    }
+
+    // 2. add: add data in the persistent datastore
+    public void insertCourseSelection(int stuId, int courId) {
+        selectCourse(stuId, courId);
+        logger.info("数据插入数据库成功");
+    }
+
+    // 3. delete: delete data from both im-memory and persistent datastore
+    @Transactional
+    public void deleteCourseSelection(int id) {
+        CourseSelection courseSelection = courseSelectionMapper.queryById(id);
+        courseSelectionRepository.deleteCourseSelectionByIds(courseSelection.getStuId(), courseSelection.getCourId());
+        courseSelectionRepository.deleteCourseSelection(id);
+        logger.info("数据从缓存中删除");
+        courseSelectionMapper.deleteById(id);
+        logger.info("数据从数据库中删除");
+    }
+
+    @Transactional
+    public void updateCourseSelection(int id) {
+        CourseSelection courseSelection = courseSelectionMapper.queryById(id);
+        courseSelection.setStatus("INVALID");
+        try {
+            courseSelectionMapper.updateStatus(courseSelection);
+            courseSelectionRepository.deleteCourseSelection(id);
+            courseSelectionRepository.deleteCourseSelectionByIds(courseSelection.getStuId(), courseSelection.getCourId());
+            logger.info("数据已在数据库中更新，且在缓存中删除");
+        } catch(Exception e) {
+            logger.info("数据更新失败");
+            throw new RuntimeException("数据更新失败");
+        }
+    }
+
+    @Transactional
+    public CourseSelection searchCourseSelectionByIds(int stuId, int courId) {
+        CourseSelection courseSelection = courseSelectionRepository.searchCourseSelectionByIds(stuId, courId);
+        if (courseSelection == null) {
+            courseSelection = courseSelectionMapper.queryByStuIdAndCourId(stuId, courId);
+            courseSelectionRepository.insertCourseSelectionByIds(stuId, courId, courseSelection);
+        }
+        return courseSelection;
+    }
+
 }

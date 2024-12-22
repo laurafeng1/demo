@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.entity.User;
 import com.example.demo.enums.GameScoreEnum;
+import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserRankRepository;
 import com.example.demo.service.CompetitionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +15,19 @@ public class CompetitionServiceImpl implements CompetitionService {
     @Autowired
     private UserRankRepository userRankRepository;
 
-    @Override
-    public void joinGame(int gameId, User user) {
-        //todo: check if user exists
-        user.setScore(0.0);
-        userRankRepository.addUser(gameId, user, 0.0);
-    }
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
-    public void joinGame(int gameId, User user, double score) {
+    public void joinGame(int gameId, int userId, double score) {
+        User user = userMapper.findById(userId);
+        //todo: exception + add log(before exception)
+        if(user == null) {
+            throw new RuntimeException();
+        }
+        if(checkUserExist(gameId, userId, user.getName())) {
+            throw new RuntimeException();
+        }
         user.setScore(score);
         userRankRepository.addUser(gameId, user, score);
     }
@@ -48,7 +53,7 @@ public class CompetitionServiceImpl implements CompetitionService {
         }
         exitGame(gameId, userId);
         user.setScore(updatedScore);
-        joinGame(gameId, user, updatedScore);
+        joinGame(gameId, userId, updatedScore);
     }
 
     private User searchByUserId(int gameId, int userId) {
@@ -59,6 +64,16 @@ public class CompetitionServiceImpl implements CompetitionService {
             }
         }
         return null;
+    }
+
+    private boolean checkUserExist(int gameId, int userId, String name) {
+        Set<User> users = allUserRank(gameId);
+        for(User user : users) {
+            if(user.getId() == userId && user.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

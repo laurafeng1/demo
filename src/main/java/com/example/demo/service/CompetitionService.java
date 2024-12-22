@@ -6,9 +6,7 @@ import java.util.Set;
 
 public interface CompetitionService {
 
-    void joinGame(int gameId, User user);
-
-    void joinGame(int gameId, User user, double score);
+    void joinGame(int gameId, int userId, double score);
 
     void exitGame(int gameId, int userId);
 

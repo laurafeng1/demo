@@ -13,5 +13,6 @@ import lombok.Setter;
 public class GameUserAddCmd {
     private int gameId;
 
-    private User user;
+    private int userId;
+
 }

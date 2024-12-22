@@ -28,7 +28,7 @@ public class GameRankController {
         long start = System.currentTimeMillis();
         long end;
         try{
-            competitionService.joinGame(gameUserAddCmd.getGameId(), gameUserAddCmd.getUser());
+            competitionService.joinGame(gameUserAddCmd.getGameId(), gameUserAddCmd.getUserId(), 0.0);
             end = System.currentTimeMillis();
             return BaseVO.buildBaseVo(200, end - start, true, null);
         } catch (Exception e){

@@ -17,4 +17,14 @@ public interface CourseSelectionService {
     void cancelSelection(int stuId, int courId);
 
     void cancelCourse(CancelCourseCmd cmd);
+
+    CourseSelection searchCourseSelection(int id);
+
+    void insertCourseSelection(int stuId, int courId);
+
+    void deleteCourseSelection(int id);
+
+    void updateCourseSelection(int id);
+
+    CourseSelection searchCourseSelectionByIds(int stuId, int courId);
 }

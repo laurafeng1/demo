@@ -18,10 +18,14 @@
         SELECT * FROM course_selection WHERE cour_id = #{courId}
     </select>
 
+    <select id="queryById" resultMap="CourseSelectionResultMap">
+        SELECT * FROM course_selection WHERE id = #{id}
+    </select>
+
     <select id="insert">
         insert into course_selection(stu_id, cour_id)
         values
-        (#{stuId}, #{courId}, #{status})
+        (#{stuId}, #{courId})
     </select>
 
     <select id="findAll">
@@ -31,6 +35,11 @@
     <select id="delete">
         delete from course_selection
         WHERE stu_id = #{stuId} and cour_id = #{courId}
+    </select>
+
+    <select id="deleteById">
+        delete from course_selection
+        WHERE id = #{id}
     </select>
 
     <select id="queryByStuIdAndCourId" resultMap="CourseSelectionResultMap">
@@ -46,5 +55,12 @@
         set
         status = #{status}
         where stu_id = #{stuId} and cour_id = #{courId}
+    </select>
+
+    <select id="updateStatusById">
+        update course_selection
+        set
+        status = #{status}
+        where id = #{id}
     </select>
 </mapper>

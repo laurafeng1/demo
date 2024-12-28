@@ -25,4 +25,9 @@ public class TimeConvertUtil {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
         return sdf.format(date);
     }
+
+    public static String formatDay(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
 }

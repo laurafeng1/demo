@@ -39,11 +39,6 @@ public class UserSubscribeRepository {
         buildListOperation().remove(buildKey(userId, SubscribeEum.SUBSCRIBED), count, value);
     }
 
-//    public void updateAllSubscribe(int userId, List<UserSubscribe> values) {
-//        redisTemplate.delete(buildKey(userId));
-//        redisTemplate.opsForList().leftPushAll(buildKey(userId), values);
-//    }
-
     // keep consistency of keys
     private String buildKey(int userId, SubscribeEum status) {
         // 枚举的比价用 == ，常量

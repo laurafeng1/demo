@@ -26,12 +26,15 @@ public class RegisterServiceImpl implements RegisterService {
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private RegisterMessageSender registerMessageSender;
+
     Logger logger = LoggerFactory.getLogger(RegisterServiceImpl.class);
 
     @Override
     @Transactional
     public void signIn(int userId) {
-        checkUserExistence(userId);
+        User user = checkUserExistence(userId);
         try {
             userRegisterRepository.updateUserRegisterDay(userId, true);
             userRegisterRepository.updateUserRegisterWeek(userId, true);
@@ -40,6 +43,13 @@ public class RegisterServiceImpl implements RegisterService {
         } catch (RuntimeException e) {
             logger.error(String.format("用户%d在%s签到失败", userId, TimeConvertUtil.format(new Date())));
             throw new RuntimeException(String.format("用户%d在%s签到失败", userId, TimeConvertUtil.format(new Date())));
+        }
+        try {
+            registerMessageSender.sender("MY_EXCHANGE", "MY_ROUTING", user);
+            logger.info("消息发送成功");
+        } catch (RuntimeException e) {
+            logger.error("消息发送失败");
+            throw new RuntimeException(String.format("%s，%s消息发送失败", "MY_EXCHANGE", "MY_ROUTING"));
         }
     }
 
@@ -112,10 +122,11 @@ public class RegisterServiceImpl implements RegisterService {
     }
 
 
-    private void checkUserExistence(int userId) {
+    private User checkUserExistence(int userId) {
         User user = userMapper.findById(userId);
         if(user == null) {
             throw new RuntimeException("用户不存在");
         }
+        return user;
     }
 }

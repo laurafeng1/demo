@@ -54,7 +54,6 @@ public class UserController {
             end = System.currentTimeMillis();
             BaseVO baseVO = buildBaseVO(200, end -start, true, "");
             vo.setBaseVO(baseVO);
-//            int a = 4/0;
         } catch (Exception e) {
             end = System.currentTimeMillis();
             BaseVO baseVO = buildBaseVO(500, end -start,false, "查询用户失败");
@@ -76,7 +75,6 @@ public class UserController {
             end = System.currentTimeMillis();
             BaseVO baseVO = buildBaseVO(200, end -start,true, "");
             allUserVO.setBaseVO(baseVO);
-//            int a = 4/0;
         } catch (Exception e) {
             end = System.currentTimeMillis();
             BaseVO baseVO = buildBaseVO(500, end -start,false, "查询用户失败");

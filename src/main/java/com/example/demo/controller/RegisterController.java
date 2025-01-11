@@ -5,11 +5,13 @@ import com.example.demo.controller.vo.BaseVO;
 import com.example.demo.controller.vo.CheckRegisterVO;
 import com.example.demo.controller.vo.RegisterCountVO;
 import com.example.demo.service.RegisterService;
+import com.example.demo.service.impl.RegisterMessageSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+
 
 @RestController
 @RequestMapping("/user/register")
@@ -17,10 +19,16 @@ public class RegisterController {
     @Autowired
     private RegisterService registerService;
 
+    @Autowired
+    private RegisterMessageSender registerMessageSender;
+
+
+
     @PostMapping("/sign-in")
     public BaseVO signIn(int userId) {
         long start = System.currentTimeMillis();
         long end;
+
         try {
             registerService.signIn(userId);
             end = System.currentTimeMillis();

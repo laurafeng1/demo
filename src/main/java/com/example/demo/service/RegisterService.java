@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.entity.User;
 import com.example.demo.enums.RegisterEnum;
 
 import java.util.Date;

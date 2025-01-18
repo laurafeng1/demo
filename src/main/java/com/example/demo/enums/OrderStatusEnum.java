@@ -8,6 +8,7 @@ import lombok.Getter;
 public enum OrderStatusEnum {
     INIT("INIT", "初始化"),
     PAID("PAID", "已支付"),
+    REFUNDED("REFUNDED", "已退款"),
     COMPLETED("COMPLETED", "订单完成"),
     CANCELLED("CANCELLED", "订单取消");
 

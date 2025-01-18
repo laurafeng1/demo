@@ -12,8 +12,8 @@ public class DelayExampleConsumer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @RabbitListener(queues = DEAD_LETTER_QUEUE)
-    public void receiver(String message) {
-        System.out.println(message);
-    }
+//    @RabbitListener(queues = DEAD_LETTER_QUEUE)
+//    public void receiver(String message) {
+//        System.out.println(message);
+//    }
 }

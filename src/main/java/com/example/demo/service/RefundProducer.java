@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PayProducer {
+public class RefundProducer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
     public void sender(Order order) {
-        rabbitTemplate.convertAndSend("MY_EXCHANGE6", "MY_ROUTING6", order);
+        rabbitTemplate.convertAndSend("MY_EXCHANGE7", "MY_ROUTING7", order);
     }
 }

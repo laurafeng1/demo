@@ -32,17 +32,19 @@ public class BuyConsumer {
     @Autowired
     private OrderExpireProducer orderExpireProducer;
 
+    @Autowired
+    private DelayExampleProducer delayExampleProducer;
+
+    // 异步添加数据库
     @RabbitListener(queues = "MY_QUEUE1")
     @Transactional
     public void receiver(Buy buy) {
         Good good = buy.getGood();
         Order order = buy.getOrder();
+        // 异步添加数据库
         goodService.updateGood(good.getId(), good);
         orderMapper.add(order);
 
-        DelayOrder delayOrder = new DelayOrder();
-        delayOrder.setBuy(buy);
-        delayOrder.setExpireTime(System.currentTimeMillis() + DemoConstant.ORDER_EXPIRE_INTERVAL);
-        orderExpireProducer.sender(delayOrder); //有另一个listener监听这个sender
+        delayExampleProducer.sender(buy);
     }
 }

@@ -173,4 +173,30 @@ public class RabbitConfig {
     public Binding binding7() {
         return BindingBuilder.bind(queue7()).to(exchange7()).with(routingName7);
     }
+
+    @Value("${rabbitmq.queue-name8}")
+    private String queueName8;
+    @Value("${rabbitmq.exchange-name8}")
+    private String exchangeName8;
+    @Value("${rabbitmq.routing-name8}")
+    private String routingName8;
+
+
+    @Bean
+    public Queue queue8() {
+        return new Queue(queueName8, false);
+    }
+
+    @Bean
+    //    Messages are not published directly to a queue; instead, the producer sends messages to an exchange.
+    //    An exchange is responsible for routing the messages to different queues with the help of bindings and routing keys.
+    //    A binding is a link between a queue and an exchange.
+    public DirectExchange exchange8() {
+        return new DirectExchange(exchangeName8);
+    }
+
+    @Bean
+    public Binding binding8() {
+        return BindingBuilder.bind(queue8()).to(exchange8()).with(routingName8);
+    }
 }

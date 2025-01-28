@@ -19,6 +19,10 @@
         SELECT * FROM `order` WHERE id = #{id}
     </select>
 
+    <select id="queryAll" resultMap="OrderResultMap">
+        SELECT * FROM `order`
+    </select>
+
     <select id="queryByIds" resultMap="OrderResultMap">
         SELECT * FROM `order` WHERE user_id = #{userId} and good_id = #{goodId}
     </select>

@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.constant.DemoConstant;
 import com.example.demo.entity.User;
+import com.example.demo.entity.UserRegister;
 import com.example.demo.entity.UserSubscribe;
 import com.example.demo.entity.UserToken;
 import com.example.demo.enums.GenderEnum;
@@ -9,6 +10,7 @@ import com.example.demo.exception.*;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.repository.UserSubscribeRepository;
 import com.example.demo.repository.UserTokenRepository;
+import com.example.demo.service.RegisterProducer;
 import com.example.demo.service.UserService;
 import com.example.demo.util.TimeCalculateUtil;
 import org.slf4j.Logger;
@@ -36,6 +38,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserSubscribeRepository userSubscribeRepository;
+
+    @Autowired
+    private RegisterProducer registerProducer;
 
     private final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
@@ -188,8 +193,19 @@ public class UserServiceImpl implements UserService {
     }
 
     private void insertDB(User user) {
+        // 用户注册成功 异步发邮件
         try {
             userMapper.add(user);
+            // 消息队列 传user 异步发消息 不是调接口
+            UserRegister userRegister = new UserRegister();
+            userRegister.setName(user.getName());
+            userRegister.setPassword(user.getPassword());
+            userRegister.setGender(user.getGender());
+            userRegister.setAge(user.getAge());
+            userRegister.setJob(user.getJob());
+            userRegister.setEmail("1445079235@qq.com");
+            registerProducer.sender(userRegister);
+            logger.info(userRegister.toString());
         } catch (Exception e) {
             throw new UserRegisterFailedException("插入数据库失败！");
         }

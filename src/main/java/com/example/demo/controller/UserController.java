@@ -12,13 +12,15 @@ import com.example.demo.exception.UserPasswordInvalidException;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // 将entry-{“userController": new UserController()}放进spring仓库
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -81,6 +83,22 @@ public class UserController {
             allUserVO.setBaseVO(baseVO);
         } finally {
             return allUserVO;
+        }
+    }
+
+    @PostMapping("/register1")
+    public BaseVO register() {
+        long start = System.currentTimeMillis();
+        long end;
+        try {
+            userService.register("kkkKKK123", "kkk123", 28, "1", "teacher");
+            end = System.currentTimeMillis();
+            BaseVO baseVO = buildBaseVO(200, end -start,true, "");
+            return baseVO;
+        } catch (Exception e) {
+            end = System.currentTimeMillis();
+            BaseVO baseVO = buildBaseVO(500, end -start,false, e.getMessage());
+            return baseVO;
         }
     }
 

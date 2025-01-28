@@ -1,11 +1,8 @@
 package com.example.demo.integration;
 
 import com.example.demo.controller.vo.PayVO;
-import com.example.demo.exception.PayNoRetryException;
-import com.example.demo.exception.PayRetryExeption;
 import com.example.demo.exception.RefundNoRetryException;
 import com.example.demo.exception.RefundRetryException;
-import com.example.demo.integration.cmd.PayCmd;
 import com.example.demo.integration.cmd.RefundCmd;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
@@ -15,7 +12,8 @@ import org.springframework.web.client.RestTemplate;
 public class RefundIntegration {
     @Autowired
     private RestTemplate restTemplate;
-
+    // 同步调用：请求发起方必须拿到支付结果才能进行后续操作 - 强依赖
+    // 异步调用：不依赖返回结果 - 弱依赖
     public int refundIntegration(RefundCmd refundCmd) {
         String url = "http://localhost:8081/account/refund";
         // 原数据信息：对body的声明 约束

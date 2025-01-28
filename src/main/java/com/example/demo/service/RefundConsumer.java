@@ -1,7 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Order;
-import com.example.demo.exception.PayRetryExeption;
 import com.example.demo.exception.RefundRetryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +14,7 @@ import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 @Service
-@EnableRetry
+@EnableRetry // SpringBoot的注解
 public class RefundConsumer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -26,12 +25,13 @@ public class RefundConsumer {
     Logger logger = LoggerFactory.getLogger(PayConsumer.class);
 
     @RabbitListener(queues = "MY_QUEUE7")
-    @Retryable(value = {RefundRetryException.class}, maxAttempts = 5, backoff = @Backoff(delay = 2000L))
+    @Retryable(value = {RefundRetryException.class}, maxAttempts = 5, backoff = @Backoff(delay = 2000L)) // 可重试异常中最常见的是超时异常 所以在已经网络有问题的情况下 要隔断时间再重试
     public void receiver(Order order) {
         logger.info("重试");
         buyService.refundWithoutException(order.getId());
     }
 
+    // 重试完成的结果
     @Recover
     public void recover() {
         logger.error("执行失败");
